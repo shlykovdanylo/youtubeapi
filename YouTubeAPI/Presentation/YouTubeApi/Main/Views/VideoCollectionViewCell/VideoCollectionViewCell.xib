@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Medium.otf">
+            <string>SFProDisplay-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="VideoCollectionViewCell" customModule="YouTubeAPI" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="160" height="117"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="160" height="117"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8gT-em-oL3">
+                        <rect key="frame" x="0.0" y="0.0" width="160" height="70"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUf-jx-JYV">
+                        <rect key="frame" x="0.0" y="77" width="160" height="20"/>
+                        <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N8Y-hh-yb1">
+                        <rect key="frame" x="0.0" y="101" width="160" height="14.5"/>
+                        <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="0.41999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="yUf-jx-JYV" secondAttribute="trailing" id="0zo-nk-2Sh"/>
+                <constraint firstAttribute="trailing" secondItem="8gT-em-oL3" secondAttribute="trailing" id="7C5-5g-PBt"/>
+                <constraint firstItem="yUf-jx-JYV" firstAttribute="top" secondItem="8gT-em-oL3" secondAttribute="bottom" constant="7" id="AlV-Yg-YZh"/>
+                <constraint firstItem="8gT-em-oL3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="HY1-Jn-JTo"/>
+                <constraint firstItem="8gT-em-oL3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="RHL-RJ-tdb"/>
+                <constraint firstItem="N8Y-hh-yb1" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="VwN-UM-KAk"/>
+                <constraint firstAttribute="trailing" secondItem="N8Y-hh-yb1" secondAttribute="trailing" id="Wy7-Tu-fex"/>
+                <constraint firstAttribute="bottom" secondItem="8gT-em-oL3" secondAttribute="bottom" constant="47" id="fcw-iu-RG3"/>
+                <constraint firstItem="N8Y-hh-yb1" firstAttribute="top" secondItem="yUf-jx-JYV" secondAttribute="bottom" constant="4" id="hJ0-E2-QfH"/>
+                <constraint firstItem="yUf-jx-JYV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="zbb-bR-UC0"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="videoImageView" destination="8gT-em-oL3" id="M9z-sl-ylL"/>
+                <outlet property="videoNameLabel" destination="yUf-jx-JYV" id="Yty-4D-0rL"/>
+                <outlet property="videoViewsCountLabel" destination="N8Y-hh-yb1" id="Wkb-Df-Bfx"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="109.82142857142857"/>
+        </collectionViewCell>
+    </objects>
+</document>

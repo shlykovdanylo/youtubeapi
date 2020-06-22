@@ -1,0 +1,32 @@
+PODS:
+  - Alamofire (5.2.1)
+  - Moya (14.0.0):
+    - Moya/Core (= 14.0.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - SDWebImage (5.8.1):
+    - SDWebImage/Core (= 5.8.1)
+  - SDWebImage/Core (5.8.1)
+  - youtube-ios-player-helper (1.0.0)
+
+DEPENDENCIES:
+  - Moya
+  - SDWebImage
+  - youtube-ios-player-helper
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Moya
+    - SDWebImage
+    - youtube-ios-player-helper
+
+SPEC CHECKSUMS:
+  Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  SDWebImage: e3eae2eda88578db0685a0c88597fdadd9433f05
+  youtube-ios-player-helper: 92407cb78e2d17976bdbf6d863b3e06faeab4549
+
+PODFILE CHECKSUM: 6cc5838c104227334e084da137b7afadd2f1bea4
+
+COCOAPODS: 1.9.3

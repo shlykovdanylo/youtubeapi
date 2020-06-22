@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Medium.otf">
+            <string>SFProDisplay-Medium</string>
+        </array>
+        <array key="SF-Pro-Display-Regular.otf">
+            <string>SFProDisplay-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ChannelCollectionViewCell" customModule="YouTubeAPI" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="339" height="180"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="339" height="180"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u0d-vA-2A9">
+                        <rect key="frame" x="0.0" y="0.0" width="339" height="180"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gyA-tW-Scg">
+                                <rect key="frame" x="0.0" y="0.0" width="339" height="180"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlayIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Het-Xy-Q1C">
+                                <rect key="frame" x="10" y="12" width="50" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="CvG-Vv-hcb"/>
+                                    <constraint firstAttribute="width" constant="50" id="gyh-ce-mCf"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPP-q4-nvG">
+                                <rect key="frame" x="10" y="130" width="38" height="20"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k9y-dw-r5a">
+                                <rect key="frame" x="10" y="154" width="23" height="12"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="10"/>
+                                <color key="textColor" red="0.61561751365661621" green="0.61572593450546265" blue="0.61561065912246704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gyA-tW-Scg" firstAttribute="top" secondItem="u0d-vA-2A9" secondAttribute="top" id="2h5-IS-XPg"/>
+                            <constraint firstAttribute="bottom" secondItem="gyA-tW-Scg" secondAttribute="bottom" id="5Wd-5A-Tiy"/>
+                            <constraint firstAttribute="bottom" secondItem="k9y-dw-r5a" secondAttribute="bottom" constant="14" id="HGn-gN-ZZS"/>
+                            <constraint firstItem="k9y-dw-r5a" firstAttribute="leading" secondItem="u0d-vA-2A9" secondAttribute="leading" constant="10" id="Hhy-8m-KUc"/>
+                            <constraint firstAttribute="trailing" secondItem="gyA-tW-Scg" secondAttribute="trailing" id="Kzg-sv-bEd"/>
+                            <constraint firstItem="k9y-dw-r5a" firstAttribute="top" secondItem="gPP-q4-nvG" secondAttribute="bottom" constant="4" id="S9E-j9-b7m"/>
+                            <constraint firstItem="gPP-q4-nvG" firstAttribute="leading" secondItem="u0d-vA-2A9" secondAttribute="leading" constant="10" id="aea-as-Mjb"/>
+                            <constraint firstItem="gyA-tW-Scg" firstAttribute="leading" secondItem="u0d-vA-2A9" secondAttribute="leading" id="dMi-jF-XvV"/>
+                            <constraint firstItem="Het-Xy-Q1C" firstAttribute="top" secondItem="u0d-vA-2A9" secondAttribute="top" constant="12" id="kpf-0Q-AjV"/>
+                            <constraint firstItem="Het-Xy-Q1C" firstAttribute="leading" secondItem="u0d-vA-2A9" secondAttribute="leading" constant="10" id="xA0-hH-bsd"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="u0d-vA-2A9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="0KY-X1-eVv"/>
+                <constraint firstAttribute="trailing" secondItem="u0d-vA-2A9" secondAttribute="trailing" id="ZwY-uo-vij"/>
+                <constraint firstAttribute="bottom" secondItem="u0d-vA-2A9" secondAttribute="bottom" id="f4W-dc-QRb"/>
+                <constraint firstItem="u0d-vA-2A9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="g7z-Hb-xXg"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="bgView" destination="u0d-vA-2A9" id="JHQ-vg-bab"/>
+                <outlet property="channelImageView" destination="gyA-tW-Scg" id="x5N-3F-5yS"/>
+                <outlet property="channelNameLabel" destination="gPP-q4-nvG" id="o0T-QK-Yxf"/>
+                <outlet property="channelSubsCountLabel" destination="k9y-dw-r5a" id="kGC-nS-VY3"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="132.58928571428572"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="PlayIcon" width="50" height="51"/>
+    </resources>
+</document>
