@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol PlayerView: View, NetworkingView, PopupShowable {
+protocol PlayerView: View, PopupShowable {
     func update()
 }

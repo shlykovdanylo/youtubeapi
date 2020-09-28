@@ -29,17 +29,7 @@ class PlayerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        roundedView.layer.cornerRadius = 20
-        roundedView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        roundedView.clipsToBounds = true
-        setupGradient()
-        
-        videoProgressBar.setThumbImage(#imageLiteral(resourceName: "ProgressThumb"), for: .normal)
-        videoProgressBar.minimumTrackTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        videoProgressBar.minimumTrackTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.35)
-        volumeSlider.setThumbImage(#imageLiteral(resourceName: "VolumeThumb"), for: .normal)
-        volumeSlider.minimumTrackTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        volumeSlider.minimumTrackTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.35)
+        setupUI()
         
         playerView.delegate = self
         startPlayVideo()
@@ -55,6 +45,21 @@ class PlayerViewController: UIViewController {
     
     @objc func closePlayer() {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func setupUI() {
+        roundedView.layer.cornerRadius = 20
+        roundedView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        roundedView.clipsToBounds = true
+        
+        videoProgressBar.setThumbImage(#imageLiteral(resourceName: "ProgressThumb"), for: .normal)
+        videoProgressBar.minimumTrackTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        videoProgressBar.minimumTrackTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.35)
+        volumeSlider.setThumbImage(#imageLiteral(resourceName: "VolumeThumb"), for: .normal)
+        volumeSlider.minimumTrackTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        volumeSlider.minimumTrackTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.35)
+        
+        setupGradient()
     }
     
     func setupGradient() {
@@ -165,25 +170,11 @@ extension PlayerViewController: YTPlayerViewDelegate {
 }
 
 extension PlayerViewController: PlayerView {
-    func disableUserInteraction() {
-        view.isUserInteractionEnabled = false
-    }
-    
-    func enableUserInteraction() {
-        view.isUserInteractionEnabled = true
-    }
-    
-    func showLoader() {
-        
-    }
-    
-    func hideLoader() {
-        
-    }
     
     func update() {
         
     }
+    
 }
 
 extension MPVolumeView {

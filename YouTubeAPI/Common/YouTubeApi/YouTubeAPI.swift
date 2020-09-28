@@ -45,8 +45,8 @@ enum BackendAPI {
             switch result {
             case let .success(moyaResponse):
                 do {
-//                    print(moyaResponse.response?.url)
-//                    print(try moyaResponse.mapJSON())
+                    print(moyaResponse.response?.url)
+                    print(try moyaResponse.mapJSON())
                     _ = try moyaResponse.filterSuccessfulStatusCodes()
                     let data = moyaResponse.data
                     let jsonDecoder = JSONDecoder()

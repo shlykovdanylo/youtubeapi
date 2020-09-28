@@ -21,22 +21,32 @@ class YouTubeListPresenter<V: YouTubeListView>: Presenter {
     var channelsUploads: [[VideoListItem]] = []
     var playlists: [[VideoListItem]] = []
     
+    private let requestsGroup = DispatchGroup()
+    
     required init(view: View) {
         self.view = view
         
-        let token = "AIzaSyCXpUsy4hSuCEfAw_bWbgKlPDV_pb4Fli8"
+        let token = "YouTube_Api_token"
         channelApi = .init(token: token)
         playlistApi = .init(token: token)
         videolistApi = .init(token: token)
     }
     
-    func getChannels(channelsId: [String]) {
+    func getInfo() {
         view.disableUserInteraction()
         view.showLoader()
         
+        let ids = ["UCEuOwB9vSL1oPKGNdONB4ig", "UCfM3zsQsOnfWNUppiycmBuw", "UCQjw3b3Ay5zMmEHUAxL93Rw", "UCeekxg1vju_sjIK9KjJJLYg"]
+        getChannels(channelsId: ids)
+        getPlayList(playlistId: "PLN1mxegxWPd3d8jItTyrAxwm-iq-KrM-e")
+        getPlayList(playlistId: "PL3roRV3JHZzYrywUGDSoIeF7J9P4sWIba")
+    }
+    
+    private func getChannels(channelsId: [String]) {
+        
+        
         channelApi.getChannels(id: channelsId, onComplete: { [weak self] in
-            self?.view.enableUserInteraction()
-            self?.view.hideLoader()
+            
         }, onSuccess: { [weak self] items in
             guard let self = self else { return }
             
@@ -50,32 +60,35 @@ class YouTubeListPresenter<V: YouTubeListView>: Presenter {
         }
     }
     
-    func getPlayList(playlistId: String) {
-        view.disableUserInteraction()
-        view.showLoader()
+    private func getPlayList(playlistId: String) {
         
         playlistApi.getPlaylist(id: playlistId, onComplete: { [weak self] in
-            self?.view.enableUserInteraction()
-            self?.view.hideLoader()
+            print("request getPlayList() completed")
         }, onSuccess: { [weak self] items in
             guard let self = self else { return }
+            
             self.getVideolist(videos: items, playlistId: playlistId)
+            
+            self.requestsGroup.notify(queue: .main, execute: {
+                self.view.enableUserInteraction()
+                self.view.hideLoader()
+                self.view.update()
+            })
+            
         }) { [weak self] errorText in
             self?.view.showErrorPopup(with: errorText)
         }
     }
     
-    func getVideolist(videos: [PlaylistItem], playlistId: String) {
+    private func getVideolist(videos: [PlaylistItem], playlistId: String) {
         var videoIds: [String] = []
         for item in videos {
             videoIds.append(item.contentDetails.videoId)
         }
-        view.disableUserInteraction()
-        view.showLoader()
+        requestsGroup.enter()
         
         videolistApi.getVideolist(id: videoIds, onComplete: { [weak self] in
-            self?.view.enableUserInteraction()
-            self?.view.hideLoader()
+            print("request getVideolist() completed")
         }, onSuccess: { [weak self] items in
             guard let self = self else { return }
             
@@ -97,7 +110,7 @@ class YouTubeListPresenter<V: YouTubeListView>: Presenter {
             } else {
                 self.playlists.append(items)
             }
-            self.view.update()
+            self.requestsGroup.leave()
         }) { [weak self] errorText in
             self?.view.showErrorPopup(with: errorText)
         }

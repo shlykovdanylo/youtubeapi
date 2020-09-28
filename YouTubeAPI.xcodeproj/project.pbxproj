@@ -54,6 +54,8 @@
 		971799ED249D083C00B4926F /* PlayerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971799EC249D083C00B4926F /* PlayerPresenter.swift */; };
 		971799F0249E3BE700B4926F /* String+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971799EF249E3BE700B4926F /* String+extensions.swift */; };
 		971799F4249E5C9300B4926F /* Int+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971799F3249E5C9300B4926F /* Int+extensions.swift */; };
+		97A0803724A0F932004CDA92 /* BlurredLoader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97A0803524A0F931004CDA92 /* BlurredLoader.xib */; };
+		97A0803824A0F932004CDA92 /* BlurredLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A0803624A0F932004CDA92 /* BlurredLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +131,8 @@
 		971799EC249D083C00B4926F /* PlayerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPresenter.swift; sourceTree = "<group>"; };
 		971799EF249E3BE700B4926F /* String+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extensions.swift"; sourceTree = "<group>"; };
 		971799F3249E5C9300B4926F /* Int+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+extensions.swift"; sourceTree = "<group>"; };
+		97A0803524A0F931004CDA92 /* BlurredLoader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlurredLoader.xib; sourceTree = "<group>"; };
+		97A0803624A0F932004CDA92 /* BlurredLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurredLoader.swift; sourceTree = "<group>"; };
 		BE679B9A40BAF70288CCA721 /* Pods-YouTubeAPITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YouTubeAPITests.debug.xcconfig"; path = "Target Support Files/Pods-YouTubeAPITests/Pods-YouTubeAPITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DED3DEFAE5CF3DA7A12FCC4B /* Pods_YouTubeAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YouTubeAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0C0CDFD36276EC3F555FD05 /* Pods-YouTubeAPI-YouTubeAPIUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YouTubeAPI-YouTubeAPIUITests.debug.xcconfig"; path = "Target Support Files/Pods-YouTubeAPI-YouTubeAPIUITests/Pods-YouTubeAPI-YouTubeAPIUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -330,6 +334,7 @@
 				9717997A2498F27000B4926F /* YouTubeApi */,
 				971799762498069E00B4926F /* Services */,
 				971799EE249E3BD400B4926F /* Extensions */,
+				97A0803A24A0F943004CDA92 /* Views */,
 				971799702498052A00B4926F /* Configurator.swift */,
 				971799722498054100B4926F /* PresenterProtocol.swift */,
 				971799742498055C00B4926F /* ViewProtocol.swift */,
@@ -426,6 +431,23 @@
 				971799F3249E5C9300B4926F /* Int+extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		97A0803924A0F937004CDA92 /* BlurredLoader */ = {
+			isa = PBXGroup;
+			children = (
+				97A0803624A0F932004CDA92 /* BlurredLoader.swift */,
+				97A0803524A0F931004CDA92 /* BlurredLoader.xib */,
+			);
+			path = BlurredLoader;
+			sourceTree = "<group>";
+		};
+		97A0803A24A0F943004CDA92 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				97A0803924A0F937004CDA92 /* BlurredLoader */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -547,6 +569,7 @@
 				9717995D24976A7600B4926F /* SF-Pro-Display-Medium.otf in Resources */,
 				971799682497D73400B4926F /* ChannelCollectionViewCell.xib in Resources */,
 				9717996324976B6900B4926F /* ChannelTableViewCell.xib in Resources */,
+				97A0803724A0F932004CDA92 /* BlurredLoader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -693,6 +716,7 @@
 				971799712498052A00B4926F /* Configurator.swift in Sources */,
 				971799E5249D077800B4926F /* PlayerViewController.swift in Sources */,
 				9717998F2499064700B4926F /* YouTubeListInitializer.swift in Sources */,
+				97A0803824A0F932004CDA92 /* BlurredLoader.swift in Sources */,
 				97179979249809AA00B4926F /* YouTubeService.swift in Sources */,
 				971799E3249BB1BB00B4926F /* PlaylistHeaderTableViewCell.swift in Sources */,
 				971799F4249E5C9300B4926F /* Int+extensions.swift in Sources */,

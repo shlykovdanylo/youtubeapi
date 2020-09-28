@@ -14,15 +14,23 @@ class YouTubeListViewController: UIViewController {
     var presenter: YouTubeListPresenter<YouTubeListViewController>!
     
     @IBOutlet weak var ytTableView: UITableView!
-
+    
+    lazy private var loader: BlurredLoader = {
+        let loader = BlurredLoader()
+        view.addSubview(loader)
+        loader.centerInto(view: view)
+        return loader
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let ids = ["UCEuOwB9vSL1oPKGNdONB4ig", "UCfM3zsQsOnfWNUppiycmBuw", "UCQjw3b3Ay5zMmEHUAxL93Rw", "UCeekxg1vju_sjIK9KjJJLYg"]
-        presenter.getChannels(channelsId: ids)
-        presenter.getPlayList(playlistId: "PLN1mxegxWPd3d8jItTyrAxwm-iq-KrM-e")
-        presenter.getPlayList(playlistId: "PL3roRV3JHZzYrywUGDSoIeF7J9P4sWIba")
+        setupTableView()
+        presenter.getInfo()
         
+    }
+    
+    func setupTableView() {
         ytTableView.delegate = self
         ytTableView.dataSource = self
         ytTableView.rowHeight = UITableView.automaticDimension
@@ -30,7 +38,6 @@ class YouTubeListViewController: UIViewController {
         
         ytTableView.register(UINib.init(nibName: "ChannelTableViewCell", bundle: nil), forCellReuseIdentifier: "ChannelTableViewCell")
         ytTableView.register(UINib.init(nibName: "PlaylistTableViewCell", bundle: nil), forCellReuseIdentifier: "PlaylistTableViewCell")
-        
     }
     
     func openPlayer(videoId: String, playlist: [VideoListItem]) {
@@ -123,11 +130,11 @@ extension YouTubeListViewController: YouTubeListView {
     }
     
     func showLoader() {
-//        loader.startAnimating()
+        loader.startAnimating()
     }
     
     func hideLoader() {
-//        loader.stopAnimating()
+        loader.stopAnimating()
     }
     
     func update() {
